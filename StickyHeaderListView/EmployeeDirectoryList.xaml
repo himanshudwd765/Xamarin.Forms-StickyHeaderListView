@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="StickyHeaderListView.EmployeeDirectoryList"
+             xmlns:local="clr-namespace:StickyHeaderListView;assembly=StickyHeaderListView"
+             BackgroundColor="White">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" WinPhone="20,20,20,20" />
+    </ContentPage.Padding>
+    
+    <ContentPage.Content>
+        <OnPlatform x:TypeArguments="View">
+             <OnPlatform.iOS>
+
+                <StackLayout Spacing="0">
+                    <ListView x:Name="empListView"
+                              ItemsSource="{Binding}"
+                              GroupShortNameBinding = "{Binding Key}"
+                              GroupDisplayBinding = "{Binding Key}"
+                              IsGroupingEnabled = "true"                  
+                              HasUnevenRows="True"
+                              SeparatorVisibility="Default">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>                                      
+                                <StackLayout Spacing="2" Orientation="Vertical">
+                                    <Label Text="{Binding FullName}" FontSize="Medium" LineBreakMode="NoWrap" Margin="10,0,0,0"/>
+                                    <Label Text="{Binding Department}" FontSize="Small" LineBreakMode="NoWrap" Margin="10,0,0,0"/>
+                                 </StackLayout>     
+                            </ViewCell>
+                        </DataTemplate>
+                   </ListView.ItemTemplate>
+                  <ListView.GroupHeaderTemplate>
+                        <DataTemplate>
+                           <ViewCell Height="23">
+                                 <StackLayout BackgroundColor="#808080">
+                                      <Label Text="{Binding Key}"
+                                             TextColor="Black"
+                                             FontSize="Small"
+                                             VerticalOptions="CenterAndExpand"
+                                             Margin="10,0,0,0"/>
+                                 </StackLayout>
+                          </ViewCell>
+                       </DataTemplate>
+                  </ListView.GroupHeaderTemplate>
+            </ListView>
+        </StackLayout>
+                
+            </OnPlatform.iOS>
+
+            <OnPlatform.Android>
+                
+                <local:CustomListView x:Name="customListView" 
+                          VerticalOptions="FillAndExpand" 
+                          SeparatorColor="#FFFFFF" 
+                          IsPullToRefreshEnabled="True">
+                </local:CustomListView>
+                
+            </OnPlatform.Android>
+        </OnPlatform>
+       
+    </ContentPage.Content>
+    
+</ContentPage>

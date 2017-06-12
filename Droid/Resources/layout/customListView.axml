@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:baselineAligned="false"
+    android:background="#FFFFFF">
+    <se.emilsjolander.stickylistheaders.StickyListHeadersListView
+        android:id="@+id/list_employee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:drawSelectorOnTop="true"
+        android:paddingRight="0dp"
+        android:scrollbarStyle="insideOverlay"
+        android:fastScrollEnabled="true"
+        android:overScrollMode="never"
+        android:background="#FFFFFF" />
+</RelativeLayout>
