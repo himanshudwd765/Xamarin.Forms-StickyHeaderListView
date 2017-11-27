@@ -4,7 +4,5 @@ A ListView Control to display the employee directory with their names and depart
 Reference : https://github.com/emilsjolander/StickyListHeaders
 
 ![Android1](ScreenShot/android.png)
-Android:
-
-iOS:
+-----------------------------------
 ![iOS2](ScreenShot/iOS.png)
