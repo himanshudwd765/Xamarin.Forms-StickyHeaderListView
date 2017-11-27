@@ -5,4 +5,4 @@ Reference : https://github.com/emilsjolander/StickyListHeaders
 
 ![Android1](ScreenShot/android.png)
 
-![iOS2](ScreenShot/ios.png)
+![iOS2](ScreenShot/iOS.png)
